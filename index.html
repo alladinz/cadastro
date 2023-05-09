@@ -14,7 +14,7 @@
     <div class="forms-row">
     <div class="forms-column1">
     <div class="form-control">
-        <input type="value" required="">
+        <input type="value" required="" id="cpf" onkeyup="VerificarCPF();" minlength="0" maxlength="14" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
         <label>
             <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">P</span><span style="transition-delay:100ms">F</span><span style="transition-delay:150ms"></span><span style="transition-delay:200ms"></span><span style="transition-delay:250ms"></span><span style="transition-delay:300ms"></span><span style="transition-delay:350ms"e></span>
         </label>
@@ -26,11 +26,11 @@
         </label>
     </div>
     <div class="form-control">
-        <input type="value" required="">
+        <input type="value" required="" id="data" onkeyup="VerificarData();" minlength="0" maxlength="10" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
         <label>
             <span style="transition-delay:0ms">Da</span><span style="transition-delay:50ms">ta</span><span style="transition-delay:100ms"></span><span style="transition-delay:150ms">de</span><span style="transition-delay:200ms"></span><span style="transition-delay:250ms">Nasci</span><span style="transition-delay:300ms">mento</span><span style="transition-delay:350ms"e></span>
         </label>
-    </div>
+    </div><br>
     <div class="form-control">
         <input type="value" required="">
         <label>
@@ -46,7 +46,7 @@
     </div>
     <div class="forms-column2">
         <div class="form-control">
-            <input type="value" required="">
+            <input type="value" required="" id="telefone" onkeyup="VerificarTelefone();" minlength="0" maxlength="15" oninput="javascript: if (this.value.length > this.maxLength) this.value = this.value.slice(0, this.maxLength);">
             <label>
                 <span style="transition-delay:0ms">T</span><span style="transition-delay:50ms">e</span><span style="transition-delay:100ms">l</span><span style="transition-delay:150ms">e</span><span style="transition-delay:200ms">f</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms">ne</span><span style="transition-delay:350ms"e></span>
             </label>
@@ -58,13 +58,14 @@
         <label class="cyberpunk-checkbox-label">
             <input class="cyberpunk-checkbox" type="checkbox" value="2" onclick="checkedOnClick(this);">
             Feminino</label>
-        </div><br><br> <br> <br> <br> <br>
+        </div><br>
+        <div class="vazia"></div>
         <div class="form-control">
             <input type="value" required="">
             <label>
                 <span style="transition-delay:0ms">B</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">i</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">r</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms"></span><span style="transition-delay:350ms"e></span>
             </label>
-        </div>
+        </div><br><br><br>
         <label class="custom-select" id="select-box" >
             Estado
             <select name="sample" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
@@ -96,14 +97,14 @@
               <option value="26">Sergipe</option>
               <option value="27">Tocantins</option>
             </select>
-          </label> <br> <br>
+          </label>
 
             <div class="row-bttns">
-                <button class="add"></button>
-                <button class="update"></button>
-                <button class="delete"></button>
-                <button class="list"></button>
-            </div>
+                <button class="add" title="Adicionar"></button>
+                <button class="update" title="Atualizar"></button>
+                <button class="delete" title="Excluir"></button>
+                <button class="list" title="Listar"></button>
+            </div> <br><br><br><br>
     </div>
 </div>
 
@@ -162,5 +163,59 @@ function setupSelector(selector) {
     }
   });
 }
+
+function VerificarCPF(){
+    texto = cpf.value; //123.456.789-00
+
+    if(texto.length == 3){
+        cpf.value = texto + ".";
+    }
+    if(texto.length == 7){
+        cpf.value = texto + ".";
+    }
+    if(texto.length == 11){
+        cpf.value = texto + "-";
+    }
+
+    expressao = /[0-9]{3}.[0-9]{3}.[0-9]{3}.[0-9]{2}/g;
+    resposta = expressao.test(texto); //PODE SER TRUE ou FALSE
+}
+
+function VerificarTelefone(){
+        // (47)_91234-5678
+
+        texto = telefone.value;
+
+        expressao = /\([0-9]{2}\) 9[0-9]{4}-[0-9]{4}/g;
+        resposta = expressao.test(texto);
+
+        if(texto == ""){
+        telefone.value += "(";
+        }
+
+        if(texto.length == 3){
+            telefone.value = texto + ") ";
+        }
+        if(texto.length == 10){
+            telefone.value = texto + "-";
+        }
+    }
+
+    function VerificarData(){
+        // 01/01/2000
+
+        texto = data.value;
+
+        expressao = /([0-9]{2})\/([0-9]{2})\/([0-9]{4})/g
+        resposta = expressao.test(texto);
+        
+        if(texto.length == 2){
+          data.value = texto + "/";
+        }
+        if(texto.length == 5){
+          data.value = texto + "/";
+        }
+    }
+
 </script>
 </html>
