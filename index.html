@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cadastro Funcionário</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="icon" type="image/x-icon" href="icon.jpg">
+</head>
+<body>
+    <h1>CADASTRO DE FUNCIONÁRIOS</h1>
+
+    <div class="forms-row">
+    <div class="forms-column1">
+    <div class="form-control">
+        <input type="value" required="">
+        <label>
+            <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">P</span><span style="transition-delay:100ms">F</span><span style="transition-delay:150ms"></span><span style="transition-delay:200ms"></span><span style="transition-delay:250ms"></span><span style="transition-delay:300ms"></span><span style="transition-delay:350ms"e></span>
+        </label>
+    </div>
+    <div class="form-control">
+        <input type="value" required="">
+        <label>
+            <span style="transition-delay:0ms">N</span><span style="transition-delay:50ms">o</span><span style="transition-delay:100ms">m</span><span style="transition-delay:150ms">e</span><span style="transition-delay:200ms"></span><span style="transition-delay:250ms"></span><span style="transition-delay:300ms"></span><span style="transition-delay:350ms"e></span>
+        </label>
+    </div>
+    <div class="form-control">
+        <input type="value" required="">
+        <label>
+            <span style="transition-delay:0ms">Da</span><span style="transition-delay:50ms">ta</span><span style="transition-delay:100ms"></span><span style="transition-delay:150ms">de</span><span style="transition-delay:200ms"></span><span style="transition-delay:250ms">Nasci</span><span style="transition-delay:300ms">mento</span><span style="transition-delay:350ms"e></span>
+        </label>
+    </div>
+    <div class="form-control">
+        <input type="value" required="">
+        <label>
+            <span style="transition-delay:0ms">En</span><span style="transition-delay:50ms">de</span><span style="transition-delay:100ms">re</span><span style="transition-delay:150ms">ço</span><span style="transition-delay:200ms"></span><span style="transition-delay:250ms"></span><span style="transition-delay:300ms"></span><span style="transition-delay:350ms"e></span>
+        </label>
+    </div>
+    <div class="form-control">
+        <input type="value" required="">
+        <label>
+            <span style="transition-delay:0ms">C</span><span style="transition-delay:50ms">i</span><span style="transition-delay:100ms">d</span><span style="transition-delay:150ms">a</span><span style="transition-delay:200ms">d</span><span style="transition-delay:250ms">e</span><span style="transition-delay:300ms"></span><span style="transition-delay:350ms"e></span>
+        </label>
+    </div>
+    </div>
+    <div class="forms-column2">
+        <div class="form-control">
+            <input type="value" required="">
+            <label>
+                <span style="transition-delay:0ms">T</span><span style="transition-delay:50ms">e</span><span style="transition-delay:100ms">l</span><span style="transition-delay:150ms">e</span><span style="transition-delay:200ms">f</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms">ne</span><span style="transition-delay:350ms"e></span>
+            </label>
+        </div>
+        <div class="row-sex">
+        <label class="cyberpunk-checkbox-label">
+            <input class="cyberpunk-checkbox" type="checkbox" value="1" onclick="checkedOnClick(this);"> 
+            Masculino</label>
+        <label class="cyberpunk-checkbox-label">
+            <input class="cyberpunk-checkbox" type="checkbox" value="2" onclick="checkedOnClick(this);">
+            Feminino</label>
+        </div><br><br>
+        <div class="form-control">
+            <input type="value" required="">
+            <label>
+                <span style="transition-delay:0ms">B</span><span style="transition-delay:50ms">a</span><span style="transition-delay:100ms">i</span><span style="transition-delay:150ms">r</span><span style="transition-delay:200ms">r</span><span style="transition-delay:250ms">o</span><span style="transition-delay:300ms"></span><span style="transition-delay:350ms"e></span>
+            </label>
+        </div>
+        <label class="custom-select" id="select-box" >
+            Estado
+            <select name="sample" onfocus='this.size=5;' onblur='this.size=1;' onchange='this.size=1; this.blur();'>
+              <option value="1">Acre</option>
+              <option value="2">Alagoas</option>
+              <option value="3">Amapá</option>
+              <option value="4">Amazonas</option>
+              <option value="5">Bahia</option>
+              <option value="6">Ceará</option>
+              <option value="7">Distrito Federal</option>
+              <option value="8">Espírito Santo</option>
+              <option value="9">Goiás</option>
+              <option value="10">Maranhão</option>
+              <option value="11">Mato Grosso</option>
+              <option value="12">Mato Grosso do Sul</option>
+              <option value="13">Minas Gerais</option>
+              <option value="14">Pará</option>
+              <option value="15">Paraíba</option>
+              <option value="16">Paraná</option>
+              <option value="17">Pernambuco</option>
+              <option value="18">Piauí</option>
+              <option value="19">Rio de Janeiro</option>
+              <option value="20">Rio Grande do Norte</option>
+              <option value="21">Rio Grande do Sul</option>
+              <option value="22">Rondônia</option>
+              <option value="23">Roraima</option>
+              <option value="24">Santa Catarina</option>
+              <option value="25">São Paulo</option>
+              <option value="26">Sergipe</option>
+              <option value="27">Tocantins</option>
+            </select>
+          </label> <br> <br>
+
+            <div class="row-bttns">
+                <button class="add"></button>
+                <button class="update"></button>
+                <button class="delete"></button>
+                <button class="list"></button>
+            </div>
+    </div>
+</div>
+
+</body>
+<script>
+   function checkedOnClick(el){
+
+      // Select all checkboxes by class
+      var checkboxesList = document.getElementsByClassName("cyberpunk-checkbox");
+      for (var i = 0; i < checkboxesList.length; i++) {
+         checkboxesList.item(i).checked = false; // Uncheck all checkboxes
+      }
+
+      el.checked = true; // Checked clicked checkbox
+   }
+
+   document.querySelectorAll('.custom-select').forEach(setupSelector);
+
+function setupSelector(selector) {
+  selector.addEventListener('change', e => {
+    console.log('changed', e.target.value)
+  })
+
+  selector.addEventListener('mousedown', e => {
+    if(window.innerWidth >= 420) {// override look for non mobile
+      e.preventDefault();
+
+      const select = selector.children[0];
+      const dropDown = document.createElement('ul');
+      dropDown.className = "selector-options";
+
+      [...select.children].forEach(option => {
+        const dropDownOption = document.createElement('li');
+        dropDownOption.textContent = option.textContent;
+
+        dropDownOption.addEventListener('mousedown', (e) => {
+          e.stopPropagation();
+          select.value = option.value;
+          selector.value = option.value;
+          select.dispatchEvent(new Event('change'));
+          selector.dispatchEvent(new Event('change'));
+          dropDown.remove();
+        });
+
+        dropDown.appendChild(dropDownOption);   
+      });
+
+      selector.appendChild(dropDown);
+
+      // handle click out
+      document.addEventListener('click', (e) => {
+        if(!selector.contains(e.target)) {
+          dropDown.remove();
+        }
+      });
+    }
+  });
+}
+</script>
+</html>
